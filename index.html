@@ -1,0 +1,1062 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#10243a">
+<meta name="description" content="Ashwaq Institute provides tuition and academic support for students from Class 1 to Class 10.">
+<title>Ashwaq SIR Institute | Quality Education</title>
+
+<style>
+:root {
+  --navy:#10243a;
+  --navy2:#193751;
+  --gold:#d6b46b;
+  --bg:#f6f7fa;
+  --card:#ffffff;
+  --text:#172535;
+  --muted:#657487;
+  --border:#e5e9ef;
+  --green:#20a467;
+}
+
+.dark {
+  --bg:#101820;
+  --card:#192630;
+  --text:#f1f5f9;
+  --muted:#aab8c7;
+  --border:#2b3b49;
+}
+
+* {
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  scroll-behavior:smooth;
+}
+
+body {
+  font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  line-height:1.6;
+  transition:.25s;
+}
+
+a {
+  text-decoration:none;
+  color:inherit;
+}
+
+button {
+  cursor:pointer;
+  font-family:inherit;
+}
+
+.container {
+  width:min(1120px,92%);
+  margin:auto;
+}
+
+header {
+  position:sticky;
+  top:0;
+  z-index:100;
+  background:var(--card);
+  border-bottom:1px solid var(--border);
+}
+
+.nav {
+  min-height:72px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:15px;
+}
+
+.logo {
+  display:flex;
+  align-items:center;
+  gap:10px;
+  font-weight:800;
+  font-size:19px;
+  color:var(--navy);
+}
+
+.dark .logo {
+  color:var(--gold);
+}
+
+.logo-icon {
+  width:42px;
+  height:42px;
+  background:var(--navy);
+  color:var(--gold);
+  display:grid;
+  place-items:center;
+  border-radius:12px;
+  font-size:22px;
+}
+
+.nav-links {
+  display:flex;
+  gap:22px;
+  align-items:center;
+}
+
+.nav-links a {
+  font-size:14px;
+  font-weight:600;
+  color:var(--muted);
+}
+
+.nav-links a:hover {
+  color:var(--gold);
+}
+
+.theme-btn,.menu-btn {
+  border:1px solid var(--border);
+  background:var(--card);
+  color:var(--text);
+  width:40px;
+  height:40px;
+  border-radius:12px;
+  font-size:18px;
+}
+
+.menu-btn {
+  display:none;
+}
+
+.hero {
+  background:linear-gradient(130deg,#10243a,#193751);
+  color:white;
+  padding:85px 0 90px;
+  overflow:hidden;
+  position:relative;
+}
+
+.hero::after {
+  content:"";
+  width:400px;
+  height:400px;
+  position:absolute;
+  right:-120px;
+  top:-120px;
+  border:1px solid rgba(214,180,107,.2);
+  border-radius:50%;
+}
+
+.hero-content {
+  max-width:700px;
+  position:relative;
+  z-index:2;
+}
+
+.tag {
+  display:inline-block;
+  padding:7px 14px;
+  border:1px solid rgba(214,180,107,.5);
+  color:var(--gold);
+  border-radius:30px;
+  font-size:13px;
+  margin-bottom:22px;
+}
+
+.hero h1 {
+  font-size:clamp(36px,7vw,64px);
+  line-height:1.12;
+  margin-bottom:20px;
+}
+
+.hero h1 span {
+  color:var(--gold);
+}
+
+.hero p {
+  color:#d5deea;
+  font-size:17px;
+  max-width:580px;
+  margin-bottom:30px;
+}
+
+.buttons {
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px;
+}
+
+.btn {
+  display:inline-flex;
+  justify-content:center;
+  align-items:center;
+  padding:13px 22px;
+  border-radius:12px;
+  font-weight:700;
+  border:none;
+  transition:.2s;
+}
+
+.btn:hover {
+  transform:translateY(-2px);
+}
+
+.btn-gold {
+  background:var(--gold);
+  color:#10243a;
+}
+
+.btn-outline {
+  border:1px solid #ffffff55;
+  color:white;
+  background:transparent;
+}
+
+section {
+  padding:75px 0;
+}
+
+.section-title {
+  text-align:center;
+  margin-bottom:40px;
+}
+
+.section-title small {
+  color:var(--gold);
+  font-weight:800;
+  letter-spacing:2px;
+  text-transform:uppercase;
+}
+
+.section-title h2 {
+  font-size:clamp(26px,4vw,38px);
+  margin-top:8px;
+}
+
+.section-title p {
+  color:var(--muted);
+  margin-top:10px;
+}
+
+.cards {
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:20px;
+}
+
+.card {
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:18px;
+  padding:25px;
+  transition:.25s;
+}
+
+.card:hover {
+  transform:translateY(-5px);
+  border-color:var(--gold);
+}
+
+.card-icon {
+  width:50px;
+  height:50px;
+  display:grid;
+  place-items:center;
+  border-radius:14px;
+  background:rgba(214,180,107,.15);
+  font-size:24px;
+  margin-bottom:16px;
+}
+
+.card h3 {
+  margin-bottom:8px;
+}
+
+.card p {
+  color:var(--muted);
+  font-size:14px;
+}
+
+.class-number {
+  font-size:28px;
+  font-weight:800;
+  color:var(--gold);
+  margin-bottom:5px;
+}
+
+.subjects {
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  justify-content:center;
+}
+
+.subject {
+  background:var(--card);
+  border:1px solid var(--border);
+  padding:12px 18px;
+  border-radius:30px;
+  font-weight:600;
+  font-size:14px;
+}
+
+.about-grid {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:35px;
+  align-items:center;
+}
+
+.about-box {
+  background:var(--navy);
+  color:white;
+  border-radius:24px;
+  padding:35px;
+}
+
+.about-box h3 {
+  font-size:26px;
+  color:var(--gold);
+  margin-bottom:15px;
+}
+
+.about-box p {
+  color:#d5deea;
+}
+
+.about-text h2 {
+  font-size:32px;
+  margin-bottom:15px;
+}
+
+.about-text p {
+  color:var(--muted);
+  margin-bottom:15px;
+}
+
+.check {
+  margin:10px 0;
+  font-weight:600;
+}
+
+.check span {
+  color:var(--green);
+  margin-right:8px;
+}
+
+.admission-section {
+  background:var(--card);
+}
+
+.form-box {
+  max-width:700px;
+  margin:auto;
+  border:1px solid var(--border);
+  border-radius:20px;
+  padding:28px;
+}
+
+.form-grid {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:17px;
+}
+
+.field {
+  display:flex;
+  flex-direction:column;
+  gap:7px;
+}
+
+.field.full {
+  grid-column:1/-1;
+}
+
+label {
+  font-size:14px;
+  font-weight:700;
+}
+
+input,select,textarea {
+  width:100%;
+  padding:13px;
+  border-radius:10px;
+  border:1px solid var(--border);
+  background:var(--bg);
+  color:var(--text);
+  outline:none;
+  font-family:inherit;
+}
+
+input:focus,select:focus,textarea:focus {
+  border-color:var(--gold);
+}
+
+textarea {
+  min-height:90px;
+  resize:vertical;
+}
+
+.terms-check {
+  display:flex;
+  gap:10px;
+  align-items:flex-start;
+  font-size:13px;
+  color:var(--muted);
+  margin:20px 0;
+}
+
+.terms-check input {
+  width:auto;
+  margin-top:5px;
+}
+
+.form-box .btn {
+  width:100%;
+}
+
+.rules {
+  max-width:850px;
+  margin:auto;
+}
+
+.rule {
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:13px;
+  padding:18px;
+  margin-bottom:12px;
+}
+
+.rule h3 {
+  font-size:16px;
+  margin-bottom:5px;
+}
+
+.rule p {
+  color:var(--muted);
+  font-size:14px;
+}
+
+.declaration {
+  padding:20px;
+  border:1px dashed var(--gold);
+  border-radius:14px;
+  margin-top:20px;
+  color:var(--muted);
+  font-size:14px;
+}
+
+.contact-grid {
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:20px;
+}
+
+.contact-card {
+  text-align:center;
+}
+
+.contact-card .card-icon {
+  margin:0 auto 15px;
+}
+
+.contact-card p {
+  color:var(--muted);
+}
+
+.contact-card a {
+  color:var(--gold);
+  font-weight:700;
+}
+
+footer {
+  background:#10243a;
+  color:#d5deea;
+  padding:35px 0;
+  text-align:center;
+}
+
+footer strong {
+  color:var(--gold);
+}
+
+footer p {
+  font-size:13px;
+  margin-top:8px;
+}
+
+.whatsapp-float {
+  position:fixed;
+  bottom:20px;
+  right:20px;
+  z-index:99;
+  background:#20b969;
+  color:white;
+  width:55px;
+  height:55px;
+  border-radius:50%;
+  display:grid;
+  place-items:center;
+  font-size:25px;
+  box-shadow:0 5px 20px #0003;
+}
+
+.reveal {
+  opacity:0;
+  transform:translateY(20px);
+  transition:.6s;
+}
+
+.reveal.show {
+  opacity:1;
+  transform:translateY(0);
+}
+
+@media(max-width:800px) {
+  .nav-links {
+    display:none;
+    position:absolute;
+    top:72px;
+    left:0;
+    right:0;
+    background:var(--card);
+    padding:20px;
+    flex-direction:column;
+    border-bottom:1px solid var(--border);
+  }
+
+  .nav-links.open {
+    display:flex;
+  }
+
+  .menu-btn {
+    display:block;
+  }
+
+  .cards,.contact-grid {
+    grid-template-columns:1fr 1fr;
+  }
+
+  .about-grid {
+    grid-template-columns:1fr;
+  }
+}
+
+@media(max-width:550px) {
+  section {
+    padding:55px 0;
+  }
+
+  .hero {
+    padding:65px 0;
+  }
+
+  .cards,.contact-grid,.form-grid {
+    grid-template-columns:1fr;
+  }
+
+  .field.full {
+    grid-column:auto;
+  }
+
+  .form-box {
+    padding:18px;
+  }
+
+  .nav {
+    min-height:65px;
+  }
+
+  .logo {
+    font-size:16px;
+  }
+
+  .nav-links {
+    top:65px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="container nav">
+    <a href="#home" class="logo">
+      <div class="logo-icon">A</div>
+      ASHWAQ SIR INSTITUTE
+    </a>
+
+    <nav class="nav-links" id="navLinks">
+      <a href="#home">Home</a>
+      <a href="#classes">Classes</a>
+      <a href="#subjects">Subjects</a>
+      <a href="#about">About</a>
+      <a href="#admission">Admission</a>
+      <a href="#rules">Rules</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <div style="display:flex;gap:8px">
+      <button class="theme-btn" id="themeBtn" aria-label="Toggle theme">🌙</button>
+      <button class="menu-btn" id="menuBtn" aria-label="Open menu">☰</button>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+
+<section class="hero" id="home">
+  <div class="container hero-content reveal">
+    <span class="tag">ADMISSIONS OPEN</span>
+
+    <h1>Building Bright Futures Through <span>Education</span></h1>
+
+    <p>
+      Welcome to Ashwaq SIR Institute. We provide dedicated academic
+      support and tuition for school students from Class 1 to Class 10.
+    </p>
+
+    <div class="buttons">
+      <a href="#admission" class="btn btn-gold">Enquire for Admission →</a>
+      <a href="#about" class="btn btn-outline">Discover Our Institute</a>
+    </div>
+  </div>
+</section>
+
+<!-- CLASSES -->
+
+<section id="classes">
+  <div class="container">
+    <div class="section-title reveal">
+      <small>OUR CLASSES</small>
+      <h2>Education for Every Stage</h2>
+      <p>Academic support for students from Class 1 to Class 10.</p>
+    </div>
+
+    <div class="cards">
+      <div class="card reveal">
+        <div class="card-icon">📚</div>
+        <div class="class-number">1 – 5</div>
+        <h3>Primary Classes</h3>
+        <p>Building strong foundations in reading, writing, mathematics and essential learning skills.</p>
+      </div>
+
+      <div class="card reveal">
+        <div class="card-icon">🎓</div>
+        <div class="class-number">6 – 8</div>
+        <h3>Middle School</h3>
+        <p>Helping students understand concepts, strengthen subject knowledge and prepare for exams.</p>
+      </div>
+
+      <div class="card reveal">
+        <div class="card-icon">🏆</div>
+        <div class="class-number">9 – 10</div>
+        <h3>High School</h3>
+        <p>Focused academic support, revision, practice and preparation for school examinations.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SUBJECTS -->
+
+<section id="subjects">
+  <div class="container">
+    <div class="section-title reveal">
+      <small>ACADEMIC SUPPORT</small>
+      <h2>Subjects We Teach</h2>
+      <p>Support across school subjects, according to the student's class and syllabus.</p>
+    </div>
+
+    <div class="subjects reveal">
+      <div class="subject">📐 Mathematics</div>
+      <div class="subject">🔬 Science</div>
+      <div class="subject">📖 English</div>
+      <div class="subject">🌍 Social Studies</div>
+      <div class="subject">📝 Hindi</div>
+      <div class="subject">📚 Telugu</div>
+      <div class="subject">✏️ Other School Subjects</div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+
+<section id="about">
+  <div class="container about-grid">
+    <div class="about-box reveal">
+      <h3>Our Mission</h3>
+      <p>
+        Our mission is to help students learn with confidence,
+        develop discipline, strengthen their understanding and
+        build a positive attitude towards education.
+      </p>
+      <br>
+      <p>
+        We believe every student deserves guidance, encouragement
+        and an environment where learning matters.
+      </p>
+    </div>
+
+    <div class="about-text reveal">
+      <small style="color:var(--gold);font-weight:800">ABOUT US</small>
+      <h2>A Place to Learn and Grow</h2>
+
+      <p>
+        Ashwaq Sir Institute is dedicated to helping school students
+        improve their academic understanding and learning habits.
+      </p>
+
+      <p>
+        We provide tuition support for students from Class 1
+        through Class 10, covering school subjects according
+        to their academic requirements.
+      </p>
+
+      <div class="check"><span>✓</span> Classes 1st to 10th</div>
+      <div class="check"><span>✓</span> All school subjects</div>
+      <div class="check"><span>✓</span> Focus on learning and discipline</div>
+      <div class="check"><span>✓</span> Student academic support</div>
+    </div>
+  </div>
+</section>
+
+<!-- ADMISSION FORM -->
+
+<section class="admission-section" id="admission">
+  <div class="container">
+    <div class="section-title reveal">
+      <small>JOIN US</small>
+      <h2>Admission Enquiry</h2>
+      <p>Fill in the details to enquire about admission.</p>
+    </div>
+
+    <form class="form-box reveal" id="admissionForm">
+      <div class="form-grid">
+
+        <div class="field">
+          <label for="student">Student Name *</label>
+          <input id="student" required placeholder="Full name">
+        </div>
+
+        <div class="field">
+          <label for="parent">Parent / Guardian Name *</label>
+          <input id="parent" required placeholder="Parent name">
+        </div>
+
+        <div class="field">
+          <label for="class">Class *</label>
+          <select id="class" required>
+            <option value="">Select class</option>
+            <option>1st Class</option>
+            <option>2nd Class</option>
+            <option>3rd Class</option>
+            <option>4th Class</option>
+            <option>5th Class</option>
+            <option>6th Class</option>
+            <option>7th Class</option>
+            <option>8th Class</option>
+            <option>9th Class</option>
+            <option>10th Class</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="school">School Name</label>
+          <input id="school" placeholder="School name">
+        </div>
+
+        <div class="field">
+          <label for="phone">Parent Mobile Number *</label>
+          <input id="phone" type="tel" required
+          pattern="[0-9]{10}" maxlength="10" placeholder="10-digit number">
+        </div>
+
+        <div class="field">
+          <label for="subjects">Subjects Required</label>
+          <input id="subjects" placeholder="All subjects / specific subjects">
+        </div>
+
+        <div class="field full">
+          <label for="message">Additional Message</label>
+          <textarea id="message" placeholder="Any questions or details..."></textarea>
+        </div>
+      </div>
+
+      <label class="terms-check">
+        <input type="checkbox" id="agree" required>
+        <span>
+          I have read and agree to the
+          <a href="#rules" style="color:var(--gold);font-weight:700">
+          Terms & Conditions</a>.
+        </span>
+      </label>
+
+      <button type="submit" class="btn btn-gold">
+        Send Admission Enquiry via WhatsApp
+      </button>
+    </form>
+  </div>
+</section>
+
+<!-- TERMS -->
+
+<section id="rules">
+  <div class="container">
+    <div class="section-title reveal">
+      <small>INSTITUTE POLICY</small>
+      <h2>Terms & Conditions</h2>
+      <p>Students and parents are expected to follow these rules.</p>
+    </div>
+
+    <div class="rules">
+
+      <div class="rule reveal">
+        <h3>01. Discipline & Respect</h3>
+        <p>All students must maintain respectful behaviour towards teachers, staff and fellow students.</p>
+      </div>
+
+      <div class="rule reveal">
+        <h3>02. Student Behaviour</h3>
+        <p>Disturbing classes, inappropriate behaviour or activities affecting the learning environment are prohibited.</p>
+      </div>
+
+      <div class="rule reveal">
+        <h3>03. Attendance & Timings</h3>
+        <p>Students must attend classes regularly and arrive on time. Students must follow institute entry and departure timings communicated by the institute.</p>
+      </div>
+
+      <div class="rule reveal">
+        <h3>04. Fighting & Bullying</h3>
+        <p>Fighting, bullying, threatening and creating disputes among students are prohibited.</p>
+      </div>
+
+      <div class="rule reveal">
+        <h3>05. Respect for Teachers</h3>
+        <p>Students must respect teachers, staff and fellow students at all times.</p>
+      </div>
+
+      <div class="rule reveal">
+        <h3>06. Leaving the Institute</h3>
+        <p>Students may not leave institute premises during class hours without permission.</p>
+      </div>
+
+      <div class="rule reveal">
+        <h3>07. Prohibited Items</h3>
+        <p>Drugs, tobacco, alcohol, weapons and other prohibited or harmful items are not allowed on institute premises.</p>
+      </div>
+
+      <div class="rule reveal">
+        <h3>08. Fee Policy</h3>
+        <p>Fees must be paid regularly according to the institute's payment schedule. Holiday and vacation fee policies will be communicated to parents at admission.</p>
+      </div>
+
+      <div class="rule reveal">
+        <h3>09. Mobile Phones</h3>
+        <p>Students may not use mobile phones during classes without permission.</p>
+      </div>
+
+      <div class="rule reveal">
+        <h3>10. Fee Due Date</h3>
+        <p>Fees must be paid within the specified due date. Late payment may result in temporary suspension of classes after prior communication with parents.</p>
+      </div>
+
+      <div class="rule reveal">
+        <h3>11. Parent Cooperation</h3>
+        <p>Parents or guardians are expected to cooperate regarding attendance, discipline, academic progress and fee payments.</p>
+      </div>
+
+      <div class="rule reveal">
+        <h3>12. Institute Authority</h3>
+        <p>The institute may take appropriate disciplinary action for repeated violations after communicating with the parent or guardian.</p>
+      </div>
+
+      <div class="declaration reveal">
+        <strong>Declaration:</strong>
+        By enrolling their child at Ashwaq Institute, parents/guardians
+        and students acknowledge that they have read and understood
+        the institute's rules and agree to follow them.
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+
+<section id="contact">
+  <div class="container">
+    <div class="section-title reveal">
+      <small>GET IN TOUCH</small>
+      <h2>Contact Ashwaq Institute</h2>
+      <p>For admissions and enquiries, contact us.</p>
+    </div>
+
+    <div class="contact-grid">
+
+      <div class="card contact-card reveal">
+        <div class="card-icon">📞</div>
+        <h3>Phone</h3>
+        <p>Contact us for admission details.</p>
+        <a href="tel:+917675853542" id="phoneLink">PHONE Number</a>
+      </div>
+
+      <div class="card contact-card reveal">
+        <div class="card-icon">💬</div>
+        <h3>WhatsApp</h3>
+        <p>Send us your admission enquiry.</p>
+        <a href="#" id="whatsappLink">Chat with us</a>
+      </div>
+
+      <div class="card contact-card reveal">
+        <div class="card-icon">📍</div>
+        <h3>Location</h3>
+        <p>Add institute address here.</p>
+        <a href="#" id="mapLink">View Location</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <strong>ASHWAQ INSTITUTE</strong>
+    <p>Education • Discipline • Excellence</p>
+    <p>Classes 1st to 10th | All School Subjects</p>
+    <p>© <span id="year"></span> Ashwaq Institute. All rights reserved.</p>
+  </div>
+</footer>
+
+<a class="whatsapp-float" id="floatWhatsApp" href="#" aria-label="WhatsApp">✆</a>
+
+<script>
+
+// ========================================
+// EDIT THESE DETAILS
+// ========================================
+
+const INSTITUTE_PHONE = "917675853542"; 
+// Replace with WhatsApp number including country code.
+// Example India: 919876543210 (no +, no spaces)
+
+const INSTITUTE_ADDRESS = "Hydetabad Allapur...";
+const GOOGLE_MAPS_URL = "https://maps.app.goo.gl/P5CeFVw6XTCvo36C8"; 
+// Paste your Google Maps link here.
+
+// ========================================
+
+document.getElementById("year").textContent =
+new Date().getFullYear();
+
+// WhatsApp links
+const whatsappURL = "https://wa.me/" + INSTITUTE_PHONE;
+
+document.getElementById("whatsappLink").href = whatsappURL;
+document.getElementById("floatWhatsApp").href = whatsappURL;
+
+document.getElementById("phoneLink").href =
+"tel:+" + INSTITUTE_PHONE;
+
+// Google maps
+if (GOOGLE_MAPS_URL) {
+  document.getElementById("mapLink").href = GOOGLE_MAPS_URL;
+  document.getElementById("mapLink").target = "_blank";
+} else {
+  document.getElementById("mapLink").textContent =
+  "Address: " + INSTITUTE_ADDRESS;
+}
+
+// Mobile navigation
+const menuBtn = document.getElementById("menuBtn");
+const navLinks = document.getElementById("navLinks");
+
+menuBtn.addEventListener("click", () => {
+  navLinks.classList.toggle("open");
+});
+
+navLinks.querySelectorAll("a").forEach(link => {
+  link.addEventListener("click", () => {
+    navLinks.classList.remove("open");
+  });
+});
+
+// Theme toggle
+const themeBtn = document.getElementById("themeBtn");
+
+themeBtn.addEventListener("click", () => {
+  document.body.classList.toggle("dark");
+
+  if (document.body.classList.contains("dark")) {
+    themeBtn.textContent = "☀️";
+    localStorage.setItem("ashwaqTheme", "dark");
+  } else {
+    themeBtn.textContent = "🌙";
+    localStorage.setItem("ashwaqTheme", "light");
+  }
+});
+
+if (localStorage.getItem("ashwaqTheme") === "dark") {
+  document.body.classList.add("dark");
+  themeBtn.textContent = "☀️";
+}
+
+// Admission form -> WhatsApp
+document.getElementById("admissionForm").addEventListener("submit", function(e) {
+  e.preventDefault();
+
+  const student = document.getElementById("student").value.trim();
+  const parent = document.getElementById("parent").value.trim();
+  const studentClass = document.getElementById("class").value;
+  const school = document.getElementById("school").value.trim();
+  const phone = document.getElementById("phone").value.trim();
+  const subjects = document.getElementById("subjects").value.trim();
+  const message = document.getElementById("message").value.trim();
+
+  if (!document.getElementById("agree").checked) {
+    alert("Please agree to the Terms & Conditions.");
+    return;
+  }
+
+  const text =
+`*ASHWAQ SIR INSTITUTE - ADMISSION ENQUIRY*
+
+Student Name: ${student}
+Parent/Guardian: ${parent}
+Class: ${studentClass}
+School: ${school || "Not provided"}
+Parent Mobile: ${phone}
+Subjects: ${subjects || "All subjects"}
+
+Additional Message:
+${message || "None"}
+
+Terms & Conditions: Accepted`;
+
+  const url =
+  "https://wa.me/" + INSTITUTE_PHONE +
+  "?text=" + encodeURIComponent(text);
+
+  window.open(url, "_blank");
+});
+
+// Scroll animations
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("show");
+    }
+  });
+}, {threshold:0.12});
+
+document.querySelectorAll(".reveal").forEach(el => {
+  observer.observe(el);
+});
+
+</script>
+
+</body>
+</html>
