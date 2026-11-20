@@ -1004,9 +1004,53 @@ if (localStorage.getItem("ashwaqTheme") === "dark") {
   themeBtn.textContent = "☀️";
 }
 
-// Admission form -> WhatsApp
-document.getElementById("admissionForm").addEventListener("submit", function(e) {
-  e.preventDefault();
+// Admission form -> WhatsApp (FIXED)
+const admissionForm = document.getElementById("admissionForm");
+
+admissionForm.addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    if (!admissionForm.checkValidity()) {
+        admissionForm.reportValidity();
+        return;
+    }
+
+    if (!document.getElementById("agree").checked) {
+        alert("Please agree to the Terms & Conditions.");
+        return;
+    }
+
+    const student = document.getElementById("student").value.trim();
+    const parent = document.getElementById("parent").value.trim();
+    const studentClass = document.getElementById("class").value;
+    const school = document.getElementById("school").value.trim();
+    const phone = document.getElementById("phone").value.trim();
+    const subjects = document.getElementById("subjects").value.trim();
+    const message = document.getElementById("message").value.trim();
+
+    const whatsappMessage =
+`*ASHWAQ SIR INSTITUTE - ADMISSION ENQUIRY*
+
+Student Name: ${student}
+Parent/Guardian Name: ${parent}
+Class: ${studentClass}
+School Name: ${school || "Not provided"}
+Parent Mobile: ${phone}
+Subjects Required: ${subjects || "All subjects"}
+
+Additional Message:
+${message || "None"}
+
+Terms & Conditions: Accepted`;
+
+    const whatsappURL =
+        "https://wa.me/" + INSTITUTE_PHONE +
+        "?text=" + encodeURIComponent(whatsappMessage);
+
+    // Open WhatsApp
+    window.open(whatsappURL, "_blank");
+
+});
 
   const student = document.getElementById("student").value.trim();
   const parent = document.getElementById("parent").value.trim();
