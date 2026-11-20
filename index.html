@@ -953,4 +953,99 @@ document.getElementById("year").textContent =
 new Date().getFullYear();
 
 // WhatsApp links
-const whatsappURL = "https://wa.me/" + INS
+const whatsappURL = "https://wa.me/" + INSTITUTE_PHONE;
+
+document.getElementById("whatsappLink").href = whatsappURL;
+document.getElementById("floatWhatsApp").href = whatsappURL;
+
+document.getElementById("phoneLink").href =
+"tel:+" + INSTITUTE_PHONE;
+
+// Google maps
+if (GOOGLE_MAPS_URL) {
+  document.getElementById("mapLink").href = GOOGLE_MAPS_URL;
+  document.getElementById("mapLink").target = "_blank";
+} else {
+  document.getElementById("mapLink").textContent =
+  "Address: " + INSTITUTE_ADDRESS;
+}
+
+// Mobile navigation
+const menuBtn = document.getElementById("menuBtn");
+const navLinks = document.getElementById("navLinks");
+
+menuBtn.addEventListener("click", () => {
+  navLinks.classList.toggle("open");
+});
+
+navLinks.querySelectorAll("a").forEach(link => {
+  link.addEventListener("click", () => {
+    navLinks.classList.remove("open");
+  });
+});
+
+// Theme toggle
+const themeBtn = document.getElementById("themeBtn");
+
+themeBtn.addEventListener("click", () => {
+  document.body.classList.toggle("dark");
+
+  if (document.body.classList.contains("dark")) {
+    themeBtn.textContent = "☀️";
+    localStorage.setItem("ashwaqTheme", "dark");
+  } else {
+    themeBtn.textContent = "🌙";
+    localStorage.setItem("ashwaqTheme", "light");
+  }
+});
+
+if (localStorage.getItem("ashwaqTheme") === "dark") {
+  document.body.classList.add("dark");
+  themeBtn.textContent = "☀️";
+}
+
+// Admission form -> WhatsApp (direct button action)
+function sendAdmissionWhatsApp() {
+  const student = document.getElementById("student").value.trim();
+  const parent = document.getElementById("parent").value.trim();
+  const studentClass = document.getElementById("class").value;
+  const school = document.getElementById("school").value.trim();
+  const phone = document.getElementById("phone").value.trim();
+  const subjects = document.getElementById("subjects").value.trim();
+  const message = document.getElementById("message").value.trim();
+
+  if (!student || !parent || !studentClass || !phone) {
+    alert("Please fill Student Name, Parent Name, Class, and Mobile Number.");
+    return;
+  }
+  if (!/^[0-9]{10}$/.test(phone)) {
+    alert("Please enter a valid 10-digit mobile number.");
+    return;
+  }
+  if (!document.getElementById("agree").checked) {
+    alert("Please agree to the Terms & Conditions.");
+    return;
+  }
+
+  const text = `*ASHWAQ SIR INSTITUTE - ADMISSION ENQUIRY*\n\nStudent Name: ${student}\nParent/Guardian: ${parent}\nClass: ${studentClass}\nSchool: ${school || "Not provided"}\nParent Mobile: ${phone}\nSubjects: ${subjects || "All subjects"}\n\nAdditional Message:\n${message || "None"}\n\nTerms & Conditions: Accepted`;
+  const url = "https://wa.me/" + INSTITUTE_PHONE + "?text=" + encodeURIComponent(text);
+  window.location.assign(url);
+}
+
+// Scroll animations
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("show");
+    }
+  });
+}, {threshold:0.12});
+
+document.querySelectorAll(".reveal").forEach(el => {
+  observer.observe(el);
+});
+
+</script>
+
+</body>
+</html>
